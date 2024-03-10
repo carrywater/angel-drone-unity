@@ -1,14 +1,15 @@
 # **Angel VR Project Demo**
 
-![](Documentation/Exploaded_view_render.png)
-
 ## Usage of the simulator
 The simulator is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code  For enquiries about collaboration, you may contact j.woziwodzki@student.tue.nl
+
+![](Documentation/Exploaded_view_render.png)
 
 ## Overview
 Explore the 'Angel' interactive VR demo. This design project is an exploration into a drone-assisted cardiac emergency response system that integrates a drone with a CPR device.
 
-![](Documentation/SCREENSHOT_2_PHONE.jpg)
+   ![](Documentation/VR-graphic.jpg)
+  
 
 <details>
   <summary> Methodology & background </summary>
@@ -21,7 +22,7 @@ Explore the 'Angel' interactive VR demo. This design project is an exploration i
   
   <p>Users will step into the shoes of Linda, a caregiver facing a heart attack emergency involving her partner, John, in their suburban house. Through this immersive narrative presented from Linda's perspective, our teams aimed to effectively convey the system's key features and user interactions.</p>
   
-  <p>The goal is for users to experience and review the design of the drone-enhanced emergency response system. This form of presentation will be especially impactful in VR due to the heightened sense of presence and emotional connection to the scenario due to the 6 degrees of freedom in movement, and rotation of their head and controllers. Coupled with stereo audio and haptic feedback, the immersive space allows for a more complete understanding of the system's potential benefits and areas of improvement. The user will be able to perform simple tasks and interactions, such as helping to position John optimally, clearing his airways, opening doors, and following instructions given by the drone operator.</p>
+  <p>The goal is for users to experience and review the design of the drone-enhanced emergency response system. This form of presentation will be especially impactful in VR due to the heightened sense of presence and emotional connection to the scenario due to the 6 degrees of freedom in movement, and rotation of their head and controllers. Coupled with stereo audio and haptic feedback, the immersive space allows for a more complete understanding of the system's potential benefits and areas of improvement. The user will be able to perform  tasks and interactions. </p>
 </details>
 
 > Go to [Project Page](https://mobility-squad.com/angel)
@@ -30,9 +31,79 @@ Explore the 'Angel' interactive VR demo. This design project is an exploration i
 1. The VR experience communicates the project's innovation and interaction concerns
 2. Serves as an evaluation tool for usability and UX feeding the iterative loop of improvements.
 
-   ![](Documentation/
+## Enviroment
+
+The current version of the Angel Drone Simulator features a single interactive scenario set in a small, one-room suburban home environment. The simulation places you in the afternoon as John, a resident of the home, suffers a heart attack. the users role is to help and experience firsthand how the Angel drone assists in such an emergency.
+
+![](Documentation/Enviroment.jpg)
+
+## The simulation
+
+1. Emergency Initiation: The scenario begins with John experiencing a heart attack.
+2. Angel Drone Intervention: Due to its faster response time compared to traditional ambulances, the Angel drone arrives on the scene quickly.
+3. User Assistance: As the user, you play a crucial role in supporting the drone's operation. This may involve tasks like: Opening the front door to grant the drone access to the home, positioning John in an optimal way for treatment by the drone or clearing John's airways to facilitate proper medical intervention.
+4. Future Expansion: The simulator is designed to be expandable. Future versions will incorporate a wider variety of scenes with different environments and potentially altered drone functionalities. These expanded scenarios will allow for testing various assumptions and gathering valuable insights through comparisons with benchmark data.
+
+## Input
+
+1. Keyboard and Mouse: For standard desktop use.
+2. VR Headset + controllers: Meta Quest 3 (or equivalent) for immersive simulation and interaction within the VR environment
+   
+## Output
+
+1. Computer Screen: Supports standard desktop display.
+2. Head-Mounted Display (HMD): Optimized for VR use. Tested with the Meta Quest 3.
+
+![](Documentation/SCREENSHOT_2_PHONE.jpg)
 
 ## Usage
+The following section will outline how to use and expand upon the simulation.
+
+### Scenes & Hiearchy 
+Each scene has a hiearchy composed of the following components: 
+#### A) Lighting
+Controls the lighting elements within the scene.
+#### B) XR
+All XR-related components can be found and controlled here. These components include the XR Origin (player camera, camera-floor offset) and the XR device simulator. For further details, see the [XR Interaction Toolkit Documentation](https://docs.unity3d.com/2021.1/Documentation/Manual/com.unity.xr.interaction.toolkit.html)
+#### C) Static
+Static objects are all the object that do not have a dynamic function in the scene, like the certain house objects or background buildings for instance.
+#### D) Dynamic
+ These are interactive objects that play a dynamic role in the scene. Key dynamic objects include navigational mats, the Angel drone, the phone, and John (the character experiencing the heart attack). Refer to the XR Interaction Toolkit Manual for more information on XR Interactables.
+#### E) Interface
+1. The phone interface provides visual and audible instructions (simulates communication with an emergency operator).
+2. The TV interface serves as the main menu where the player can start the game, switch scenes, and reset them.
+#### F) Triggers
+Closely linked to dynamic objects, this category includes triggers (e.g., colliders) and scripts that control the game's structure and progression.
+#### G) Event Manager
+the event manager is the main c# script tying together various dynamic objects and triggers with events that create a linear game progression. As an example positioning john, triggers a collider on the door allowing for the next interaction.
+
+## Setup 
+once you opened up the project, go to `Window` --> `Package Manager`
+Make sure you have all relevant and up-to date XR pakcages installed: 
+> `XR plugin Managment`,
+> `XR core utilities`,
+> `XR Interaction Toolkit`,
+> `Input System1`,
+> `Mock HMD XR Plugin`
+
+### Desktop setup
+1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Managment`
+> Select The `Mock HMD Loader`
+2. Next head to the Project Hierachy under XR make sure the `XR Device Simulator` is *activated* in the inspector panel.
+3. `Run` the game
+4. Tweek the `camera offset` value if nessessary under `XR` --> `XR Origin` --> `Camera Offset`
+
+### VR setup
+1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Managment`
+> Select the `Mock HMD Loader`
+ 2. Next head to the `Project Hierachy` and under `XR` make sure the `XR Device Simulator` is *deactivated* (in the inspector panel).
+3. `Run` the game
+4. Tweek the `Camera Offset` value (inspector panel) if nessessary under `XR` --> `XR Origin` --> `Camera Offset`
+
+## Animations & Transitions
+
+![](Documentation/Screenshot.jpg)
+> Animations specific to a dynamic object follow a sequential transition pattern based on change of states due to acticated triggers throughout the game. These can be altered in the `animator pannel`.
 
 ## Evaluation Facets and Methodologies
 
@@ -70,9 +141,9 @@ could build upon.</summary>
 
 </details>
 
+## Used Assets 
 
-
-## Used Assets
+> Asstes taken from [Unity Asset Store](https://assetstore.unity.com/)
 
 1. https://assetstore.unity.com/packages/3d/props/furniture/hdrp-furniture-pack-153946
 2. https://assetstore.unity.com/packages/3d/characters/humanoids/humans/free-scavenger-261065
