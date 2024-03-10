@@ -69,13 +69,13 @@ All XR-related components can be found and controlled here. These components inc
 #### C) **Static**
 Static objects are all objects that do not have a dynamic function in the scene, like certain house objects or background buildings for instance.
 #### D) **Dynamic**
- These are interactive objects that play a dynamic role in the scene. As a player you are able to interact with them. Key dynamic objects include:
+ These are interactive objects that play a dynamic role in the scene. As a player, you can interact with them. Key dynamic objects include:
  1. *Navigational mats:* These facilitate a teleportation locomotion system for both the simulated VR experience on desktop and VR setup.
  3. *The Angel drone:* Animated drone that is at the core of this simulation. In the future could have an integrated interactable AED device (AED Pads with sockets)
  4. *The phone:* An interactive (grabbable) object that facilitates instructions to the user throughout the playthrough
  5. *John:* An interactive animated character experiencing a heart attack. The user can position John and clear his airways (in the future perform manual CPR)
    
-Refer to the XR Interaction Toolkit Manual for more information on XR Interactables.
+Refer to the [XR Interaction Toolkit Manual](https://learn.unity.com/tutorial/using-interactors-and-interactables-with-the-xr-interaction-toolkit) for more information on XR Interactables.
 #### E) **Interface**
 1. The phone interface provides visual and audible instructions (simulates communication with an emergency operator).
 2. The TV interface serves as the main menu where the player can start the game, switch scenes, and reset them.
