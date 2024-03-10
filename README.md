@@ -6,7 +6,8 @@ The simulator is open-source and free to use. It is aimed for, but not limited t
 ![](Documentation/Exploaded_view_render.png)
 
 ## Overview
-Explore the 'Angel' interactive VR demo. This design project is an exploration into a drone-assisted cardiac emergency response system that integrates a drone with a CPR device.
+Explore the 'Angel' interactive VR demo. This design project is an exploration into a drone-assisted cardiac emergency response system that integrates a drone with a CPR device.   
+>What is an [automated CPR device](https://www.lucas-cpr.com/)
 
    ![](Documentation/VR-graphic.jpg)
   
