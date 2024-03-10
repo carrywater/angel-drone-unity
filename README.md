@@ -157,4 +157,4 @@ could build upon.</summary>
 3. https://assetstore.unity.com/packages/3d/props/furniture/pack-gesta-furniture-1-28237
 4. https://assetstore.unity.com/packages/3d/props/interior/door-free-pack-aferar-148411
 
-Assets from the [VR Development Pathway](https://learn.unity.com/pathway/vr-development) were used. I highly recommend following this Unity lessen to start expanding on this simulation setup. You will get more aquainted with VR basics, Event, interactions, Ergonomics, optimization & more.
+Assets from the [VR Development Pathway](https://learn.unity.com/pathway/vr-development) were used. I highly recommend following this Unity lessen to start expanding on the simulation setup (if you are new to VR). This lesson will make you more aquainted with VR basics, Event, interactions, Ergonomics, optimization & more.
