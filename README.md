@@ -1,11 +1,11 @@
 # **Angel Drone VR Simulation**
 
-## Usage of the simulator
+## **Usage of the simulator**
 The simulator is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code. For collaboration enquiries, you may contact the researcher at: j.woziwodzki@student.tue.nl or project coach at: p.bazilinskyy@tue.nl.
 
 ![](Documentation/Exploaded_view_render.png)
 
-## Overview
+## **Overview**
 Explore the 'Angel' interactive VR demo. This design project is an exploration into a drone-assisted cardiac emergency response system that integrates a drone with a CPR device.   
 >What is an [automated CPR device](https://www.lucas-cpr.com/)?
 
@@ -28,24 +28,24 @@ Explore the 'Angel' interactive VR demo. This design project is an exploration i
 
 > Go to [Project Page](https://mobility-squad.com/angel)
 
-## Purpose
+## **Purpose**
 1. The VR experience communicates the project's innovation and interaction concerns
 2. Serves as an evaluation tool for usability and UX feeding the iterative loop of improvements.
 
-## Enviroment
+## **Enviroment**
 
 The current version of the Angel Drone Simulator features a single interactive scenario set in a small, one-room suburban home environment. The simulation places you in the afternoon as John, a resident of the home, suffers a heart attack. the user's role is to help and experience firsthand how the Angel drone assists in such an emergency.
 
 ![](Documentation/Enviroment.jpg)
 
-## The simulation
+## **The simulation**
 
 1. Emergency Initiation: The scenario begins with John experiencing a heart attack.
 2. Angel Drone Intervention: Due to its faster response time compared to traditional ambulances, the Angel drone arrives on the scene quickly.
 3. User Assistance: As the user, you play a crucial role in supporting the drone's operation. This may involve tasks like: Opening the front door to grant the drone access to the home, positioning John in an optimal way for treatment by the drone or clearing John's airways to facilitate proper medical intervention.
 4. Future Expansion: The simulator is designed to be expandable. Future versions will incorporate a wider variety of scenes with different environments and potentially altered drone functionalities. These expanded scenarios will allow for testing various assumptions and gathering valuable insights through comparisons with benchmark data.
 
-## Input
+## **Input**
 
 1. Keyboard and Mouse: For standard desktop use.
 2. VR Headset + controllers: Meta Quest 3 (or equivalent) for immersive simulation and interaction within the VR environment
@@ -57,28 +57,34 @@ The current version of the Angel Drone Simulator features a single interactive s
 
 ![](Documentation/SCREENSHOT_2_PHONE.jpg)
 
-## Usage
+## **Usage**
 The following section will outline how to use and expand upon the simulation.
 
-### Scenes & Hierarchy 
+### **Scenes & Hierarchy** 
 Each scene has a hierarchy composed of the following components: 
-#### A) Lighting
+#### A) **Lighting**
 Controls the lighting elements within the scene.
-#### B) XR
+#### B) **XR**
 All XR-related components can be found and controlled here. These components include the XR Origin (player camera, camera-floor offset) and the XR device simulator. For further details, see the [XR Interaction Toolkit Documentation](https://docs.unity3d.com/2021.1/Documentation/Manual/com.unity.xr.interaction.toolkit.html)
-#### C) Static
+#### C) **Static**
 Static objects are all objects that do not have a dynamic function in the scene, like certain house objects or background buildings for instance.
-#### D) Dynamic
- These are interactive objects that play a dynamic role in the scene. Key dynamic objects include navigational mats, the Angel drone, the phone, and John (the character experiencing the heart attack). Refer to the XR Interaction Toolkit Manual for more information on XR Interactables.
-#### E) Interface
+#### D) **Dynamic**
+ These are interactive objects that play a dynamic role in the scene. As a player you are able to interact with them. Key dynamic objects include:
+ 1. *Navigational mats:* These facilitate a teleportation locomotion system for both the simulated VR experience on desktop and VR setup.
+ 3. *The Angel drone:* Animated drone that is at the core of this simulation. In the future could have an integrated interactable AED device (AED Pads with sockets)
+ 4. *The phone:* An interactive (grabbable) object that facilitates instructions to the user throughout the playthrough
+ 5. *John:* An interactive animated character experiencing a heart attack. The user can position John and clear his airways (in the future perform manual CPR)
+   
+Refer to the XR Interaction Toolkit Manual for more information on XR Interactables.
+#### E) **Interface**
 1. The phone interface provides visual and audible instructions (simulates communication with an emergency operator).
 2. The TV interface serves as the main menu where the player can start the game, switch scenes, and reset them.
-#### F) Triggers
+#### F) **Triggers**
 Closely linked to dynamic objects, this category includes triggers (e.g., colliders) and scripts that control the game's structure and progression.
-#### G) Event Manager
+##### G) **Event Manager**
 the event manager is the main c# script tying together various dynamic objects and triggers with events that create a linear game progression. As an example positioning john, triggers a collider on the door allowing for the next interaction.
 
-## Setup 
+## **Setup** 
 once you open up the project, go to `Window` --> `Package Manager`
 Make sure you have all relevant and up-to-date XR packages installed: 
 > `XR plugin Management`,
@@ -87,26 +93,26 @@ Make sure you have all relevant and up-to-date XR packages installed:
 > `Input System1`,
 > `Mock HMD XR Plugin`
 
-### Desktop setup
+### **Desktop setup**
 1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Management`
 > Select The `Mock HMD Loader`
 2. Next head to the Project Hierarchy under XR and make sure the `XR Device Simulator` is *activated* in the inspector panel.
 3. `Run` the game
 4. Tweek the `camera offset` value if necessary under `XR` --> `XR Origin` --> `Camera Offset`
 
-### VR setup
+### **VR setup**
 1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Management`
 > Select the `Mock HMD Loader`
  2. Next head to the `Project Hierarchy` and under `XR` make sure the `XR Device Simulator` is *deactivated* (in the inspector panel).
 3. `Run` the game
 4. Tweek the `Camera Offset` value (inspector panel) if necessary under `XR` --> `XR Origin` --> `Camera Offset`
 
-## Animations & Transitions
+## **Animations & Transitions**
 
 ![](Documentation/Screenshot.jpg)
 > Animations specific to a dynamic object follow a sequential transition pattern based on changes in states due to activated triggers throughout the game. These can be altered in the `animator panel`.
 
-## Evaluation Facets and Methodologies
+## **Evaluation Facets and Methodologies**
 
 While designing the VR experience our team identified different layers of the angel drone system and 
 valid approaches to evaluate them giving insights into user perceptions and preferences. These 
@@ -123,7 +129,7 @@ inevitably to controlled scenarios and design variations that would need further
 | Intuitiveness of User Prompts, Instructions & Engagement | Assess clarity of prompts and instructions | Observations, surveys with scales, questionnaires | Ensure users easily comprehend and follow system instructions |
 | Interaction Types and Effectiveness | Implement different interaction types and interfaces for the drone | Gaze-tracking & heatmaps, post-demo interviews or surveys, Real-time observations | Evaluate user comfort and efficiency with varied interaction method |
 
-## Future Work Propositions
+## **Future Work Propositions**
 
 <details>
   <summary> In the following table, the team presents a list of design research considerations that future teams 
@@ -142,7 +148,7 @@ could build upon.</summary>
 
 </details>
 
-## Used Assets 
+## **Used Assets** 
 
 > Asstes taken from [Unity Asset Store](https://assetstore.unity.com/)
 
