@@ -1,7 +1,7 @@
 # **Angel Drone VR Simulation**
 
 ## Usage of the simulator
-The simulator is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code. For enquiries about collaboration, you may contact j.woziwodzki@student.tue.nl
+The simulator is open-source and free to use. It is aimed for, but not limited to, academic research. We welcome forking of this repository, pull requests, and any contributions in the spirit of open science and open-source code. For collaboration enquiries, you may contact the researcher at: j.woziwodzki@student.tue.nl or project coach at: p.bazilinskyy@tue.nl.
 
 ![](Documentation/Exploaded_view_render.png)
 
@@ -17,7 +17,7 @@ Explore the 'Angel' interactive VR demo. This design project is an exploration i
   
   <p>To evaluate the Angel Drone concept, we drew inspiration from David J. Atkinson and Micah H. Clak's (2014) research on studying human-robot interaction in dangerous situations.</p>
   
-  <p>Their methodology involves immersive virtual reality to evoke fear-related psychological responses, simulate robot features and behavior, and conduct systematic trials with automated data collection. Our VR experience aligns with this approach, aiming to create a realistic environment where users perceive heightened risk, similar to a real-world situation.</p>
+  <p>Their methodology involves immersive virtual reality to evoke fear-related psychological responses, simulate robot features and behaviour, and conduct systematic trials with automated data collection. Our VR experience aligns with this approach, aiming to create a realistic environment where users perceive heightened risk, similar to a real-world situation.</p>
   
   <p>The Interactive VR Experience serves the dual purpose as a communicative and evaluation tool for the Angel Drone concept. At a high level, users will move around in a realistic indoor environment, actively participating in the unfolding narrative.</p>
   
@@ -34,7 +34,7 @@ Explore the 'Angel' interactive VR demo. This design project is an exploration i
 
 ## Enviroment
 
-The current version of the Angel Drone Simulator features a single interactive scenario set in a small, one-room suburban home environment. The simulation places you in the afternoon as John, a resident of the home, suffers a heart attack. the users role is to help and experience firsthand how the Angel drone assists in such an emergency.
+The current version of the Angel Drone Simulator features a single interactive scenario set in a small, one-room suburban home environment. The simulation places you in the afternoon as John, a resident of the home, suffers a heart attack. the user's role is to help and experience firsthand how the Angel drone assists in such an emergency.
 
 ![](Documentation/Enviroment.jpg)
 
@@ -60,14 +60,14 @@ The current version of the Angel Drone Simulator features a single interactive s
 ## Usage
 The following section will outline how to use and expand upon the simulation.
 
-### Scenes & Hiearchy 
-Each scene has a hiearchy composed of the following components: 
+### Scenes & Hierarchy 
+Each scene has a hierarchy composed of the following components: 
 #### A) Lighting
 Controls the lighting elements within the scene.
 #### B) XR
 All XR-related components can be found and controlled here. These components include the XR Origin (player camera, camera-floor offset) and the XR device simulator. For further details, see the [XR Interaction Toolkit Documentation](https://docs.unity3d.com/2021.1/Documentation/Manual/com.unity.xr.interaction.toolkit.html)
 #### C) Static
-Static objects are all the object that do not have a dynamic function in the scene, like the certain house objects or background buildings for instance.
+Static objects are all objects that do not have a dynamic function in the scene, like certain house objects or background buildings for instance.
 #### D) Dynamic
  These are interactive objects that play a dynamic role in the scene. Key dynamic objects include navigational mats, the Angel drone, the phone, and John (the character experiencing the heart attack). Refer to the XR Interaction Toolkit Manual for more information on XR Interactables.
 #### E) Interface
@@ -79,32 +79,32 @@ Closely linked to dynamic objects, this category includes triggers (e.g., collid
 the event manager is the main c# script tying together various dynamic objects and triggers with events that create a linear game progression. As an example positioning john, triggers a collider on the door allowing for the next interaction.
 
 ## Setup 
-once you opened up the project, go to `Window` --> `Package Manager`
-Make sure you have all relevant and up-to date XR pakcages installed: 
-> `XR plugin Managment`,
+once you open up the project, go to `Window` --> `Package Manager`
+Make sure you have all relevant and up-to-date XR packages installed: 
+> `XR plugin Management`,
 > `XR core utilities`,
 > `XR Interaction Toolkit`,
 > `Input System1`,
 > `Mock HMD XR Plugin`
 
 ### Desktop setup
-1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Managment`
+1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Management`
 > Select The `Mock HMD Loader`
-2. Next head to the Project Hierachy under XR make sure the `XR Device Simulator` is *activated* in the inspector panel.
+2. Next head to the Project Hierarchy under XR and make sure the `XR Device Simulator` is *activated* in the inspector panel.
 3. `Run` the game
-4. Tweek the `camera offset` value if nessessary under `XR` --> `XR Origin` --> `Camera Offset`
+4. Tweek the `camera offset` value if necessary under `XR` --> `XR Origin` --> `Camera Offset`
 
 ### VR setup
-1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Managment`
+1. Navigate to `Edit`--> `Project Settings` --> `XR Plugin Management`
 > Select the `Mock HMD Loader`
- 2. Next head to the `Project Hierachy` and under `XR` make sure the `XR Device Simulator` is *deactivated* (in the inspector panel).
+ 2. Next head to the `Project Hierarchy` and under `XR` make sure the `XR Device Simulator` is *deactivated* (in the inspector panel).
 3. `Run` the game
-4. Tweek the `Camera Offset` value (inspector panel) if nessessary under `XR` --> `XR Origin` --> `Camera Offset`
+4. Tweek the `Camera Offset` value (inspector panel) if necessary under `XR` --> `XR Origin` --> `Camera Offset`
 
 ## Animations & Transitions
 
 ![](Documentation/Screenshot.jpg)
-> Animations specific to a dynamic object follow a sequential transition pattern based on change of states due to acticated triggers throughout the game. These can be altered in the `animator pannel`.
+> Animations specific to a dynamic object follow a sequential transition pattern based on changes in states due to activated triggers throughout the game. These can be altered in the `animator panel`.
 
 ## Evaluation Facets and Methodologies
 
@@ -121,7 +121,7 @@ inevitably to controlled scenarios and design variations that would need further
 | Aesthetics & Emotional Impact | Present different drone models/variations in various scenes | User feedback surveys on visual appeal, comfort, and perceived effectiveness. A/B testing with variations. | Identify user preferences and optimize for visual appeal, recognizability and trust |
 | User Confidence in Resuscitation Success | Represent multiple scenarios in scenes with both drones and human respondents (AED volunteers) as a baseline measurement | Real-time confidence perception slider, questionnaires measuring perceived effectiveness | Gauge user trust in different resuscitation approaches |
 | Intuitiveness of User Prompts, Instructions & Engagement | Assess clarity of prompts and instructions | Observations, surveys with scales, questionnaires | Ensure users easily comprehend and follow system instructions |
-| Interaction Types and Effectiveness | Implement different interaction types and interfaces for the drone | Gaze-tracking & heatmaps, post-demo interviews or surveys, Real time observations | Evaluate user comfort and efficiency with varied interaction method |
+| Interaction Types and Effectiveness | Implement different interaction types and interfaces for the drone | Gaze-tracking & heatmaps, post-demo interviews or surveys, Real-time observations | Evaluate user comfort and efficiency with varied interaction method |
 
 ## Future Work Propositions
 
@@ -136,7 +136,7 @@ could build upon.</summary>
   | Investigating the optimal way of communicating with users in cardiac emergency scenarios | In medical emergencies, communication should be clear yet calming (A. Jordan, 2023). What would be the most calming, yet efficient way of communicating with users in cardiac emergency scenarios? | Interaction design |
   | Investigating the preferred “face” of the drone | As in automotive design, design elements can resemble anthropomorphic facial features. What “face” design, if any at all, is considered most visually appealing and reassuring amongst users? | Design for aesthetics |
   | Investigating the least threatening flight path | As indicated by one of the team’s coaches, the way the drone moves and approaches could influence trust amongst recipients. | Interaction design |
-  | Further optimizing interactions for efficiency (time is key) and user-friendliness | In high-stake scenarios like reanimations, how can one design for ergonomic and user-friendly interactions and instructions? | Interaction design |
+  | Further optimizing interactions for efficiency (time is key) and user-friendliness | In high-stakes scenarios like reanimations, how can one design for ergonomic and user-friendly interactions and instructions? | Interaction design |
   | Investigating the potential for more autonomous medical drone operations | Though decided to not focus on this project, further exploring to what extent drones can handle cardiac emergencies without the assistance of human responders could be valuable for cases where the patient is alone. | Engineering design |
   | Designing an optimized network of launch stations for medical emergency drones | What would be the logistics behind a medical drone network? How will they be distributed across the country, launched, charged, and operated? Such questions could be investigated in future research. | Engineering design | 
 
